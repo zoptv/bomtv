@@ -1,12 +1,20 @@
-<!DOCTYPE html><html lang="en"><head><title> error page </title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!DOCTYPE html><html lang="en"><head><title> 404 Error Page </title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><style type="text/css">
-body{background:#08e103;color:#fff;font-size:20px;line-height:2em;padding:30px 0}@media only screen and (orientation:landscape)
-{body{background-color:#00f}}h6{color:#fdd702;display:block;font-size:30px;font-weight:700;margin:0;padding:0}
-.erhomr{background-color:red;border:1px solid #fff;box-shadow:0 0 2px #000;color:#fff;display:inline-block;height:40px;
-padding:0 20px;line-height:40px;text-align:center;text-decoration:none;transition:all .7s ease 0s}.erhomr:hover{background-color:green;color:#fff}
-</style></head><body background=""><!-- code page error / كــــــــــود صـفـحــة الـخـــطـــــأ -->
-<b:if cond='data:blog.pageType == &quot;error_page&quot;'>
-<center><!-- بداية محتوى الصفحة --><h1>PAGE  ERROR</h1><h1> 404 </h1><h6>صفـحــة خـطـأ</h6>
-<p> ..... الصفحة التي تبحث (ي) عنها غير موجوده او ربما تم حذفها</p><a class="erhomr" href="/"> الصفحة الرئيسية</a><!-- نهاية محتوى الصفحة --></center></b:if>
-<b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-<div class="cnmu-error-body"></div></b:if><!-- code page error / كــــــــــود صـفـحــة الـخـــطـــــأ --></body></html>
+body {background:#1bf00e; }
+h1{color: red; font-size: 70px; font-family:impact; 
+-webkit-text-stroke: 2px white; text-shadow: 2px 2px 2px rgb(170,170,170);}
+h2 {color:white; font-size: 30px; font-family:arial; font-weight: bold;}
+p {color: yellow; font-family:arial;  font-size: 30px;font-weight: bold;}
+a {background: white; border-width:3px;border-style:solid;border-color:black; 
+padding:5px;  color: red ; font-family:arial;  font-size: 40px;font-weight: bold;text-decoration: none;}
+@media only screen and (max-width: 800px) {
+body {background-color: #0915fb;}
+h1{color: red; font-size: 50px; font-family:impact;}   }
+@media only screen and (max-width: 500px) {
+body {background-color: red;}
+a {color:red ; font-family:arial;  font-size: 30px;font-weight: bold;text-decoration: none;}
+h1{color: green; font-size: 40px; font-family:impact;}   }
+</style></head><body background="">
+<center><h1>404 PAGE  ERROR</h1><hr><h2>صفـحــة خـطـأ 404</h2>
+<p> ..... الصفحة التي تبحث (ي) عنها غير موجوده او ربما تم حذفها</p>
+<a  href="/"> الصفحة الرئيسية</a></center></body></html>
