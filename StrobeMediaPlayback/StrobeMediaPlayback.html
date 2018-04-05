@@ -1,53 +1,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 <title>Strobe Media Playback</title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="author" content="mangui">
-<meta name="description" content="HLS Plugin for OSMF - Strobe Media Playback sample page">
+<meta name="author" content="mangui"><meta name="description" content="HLS Plugin for OSMF - Strobe Media Playback sample page">
 <meta name="keywords" content="hls, osmf, m3u8, http live streaming, open source media framework, strobe media player, strobe media playback, strobemediaplayer, strobemediaplayback, apple hls, plugin, h264, H.264, x264, aac, mp3, flash, flashplayer, flash player, video, audio, mbr, multibitrate, multi bitrate, vod, video on demand, live, live stream, dvr, dvr stream, digital video recorder">
 <script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-52843650-1","auto"),ga("send","pageview");</script></head><body>
 <script type="text/javascript" src="swfobject.js"></script>
-<script type="text/javascript" src="ParsedQueryString.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="ParsedQueryString.js"></script><script type="text/javascript">
 var player=null;function loadStream(e){player.setMediaResourceURL(e)}function getlink(e){return"StrobeMediaPlayback.html?src="+encodeURIComponent(e)}function listStreams(e,a){for(var r=0;r<e.length;r++){var t=document.createElement("li");t.innerHTML="<a href='#' onclick='return loadStream(\""+e[r].file+"\")'>"+e[r].title+"</a>",document.getElementById(a).appendChild(t)}}function jsbridge(e,a,r){switch(null==player&&(player=document.getElementById(e)),a){case"onJavaScriptBridgeCreated":listStreams(teststreams,"streamlist");break;case"timeChange":case"timeupdate":case"progress":break;default:console.log(a,r)}}for(var pqs=new ParsedQueryString,parameterNames=pqs.params(!1),parameters={src:"http://www.streambox.fr/playlists/x36xhzz/x36xhzz.m3u8",autoPlay:"false",verbose:!0,controlBarAutoHide:"true",controlBarPosition:"bottom",poster:"poster.png",javascriptCallbackFunction:"jsbridge",plugin_hls:"flashlsOSMF.swf",hls_minbufferlength:-1,hls_maxbufferlength:30,hls_lowbufferlength:3,hls_seekmode:"KEYFRAME",hls_startfromlevel:-1,hls_seekfromlevel:-1,hls_live_flushurlcache:!1,hls_info:!0,hls_debug:!1,hls_debug2:!1,hls_warn:!0,hls_error:!0,hls_fragmentloadmaxretry:-1,hls_manifestloadmaxretry:-1,hls_capleveltostage:!1,hls_maxlevelcappingmode:"downscale"},i=0;i<parameterNames.length;i++){var parameterName=parameterNames[i];parameters[parameterName]=pqs.param(parameterName)||parameters[parameterName]}var wmodeValue="direct",wmodeOptions=["direct","opaque","transparent","window"];parameters.hasOwnProperty("wmode")&&(wmodeOptions.indexOf(parameters.wmode)>=0&&(wmodeValue=parameters.wmode),delete parameters.wmode),swfobject.embedSWF("StrobeMediaPlayback.swf","StrobeMediaPlayback",640,480,"10.1.0","expressInstall.swf",parameters,{allowFullScreen:"true",wmode:wmodeValue},{name:"StrobeMediaPlayback"});</script>
-<div id="customButtons"></div>
-<table width="100%" border="0" cellspacing="5">
-<tr>
-<td width="43">
-<img src="http://www.flashls.org/latest/examples/osmf/images/adobe-lq.png" alt="" width="43" height="72" />
-                </td>
-                <td width="320" class="Verdana">
-                    Strobe Media Playback
-                </td>
-                <td width="262">
-                    <img src="http://www.flashls.org/latest/examples/osmf/images/osmf_horizontal_red.png" width="262" height="57" alt="osmf logo"/>
-                </td>
-                <td width="*">
-                </td>
-            </tr>
-        </table>
-        <table width="100%" border="0" cellspacing="5">
-            <tr>
-                <td>
-                    <div id="StrobeMediaPlayback">
-                        <p>
-                            Alternative content
-                        </p>
-                    </div>
-                </td>
-            </tr>
-        </table>
+<div id="customButtons"></div><table width="100%" border="0" cellspacing="5"><tr><td width="43">
+<img src="http://www.flashls.org/latest/examples/osmf/images/adobe-lq.png" alt="" width="43" height="72" /></td>
+<td width="320" class="Verdana">Strobe Media Playback</td><td width="262">
+<img src="http://www.flashls.org/latest/examples/osmf/images/osmf_horizontal_red.png" width="262" height="57" alt="osmf logo"/>
+</td><td width="*"></td></tr></table><table width="100%" border="0" cellspacing="5">
+ <tr> <td><div id="StrobeMediaPlayback"><p>Alternative content</p></div></td></tr></table>
 Check with your own Playlist ! <a href="http://kb2.adobe.com/cps/142/tn_14213.html">beware of Cross Domain Policy</a><br>
 <input id="userInput" value="http://184.72.239.149/vod/smil:BigBuckBunny.smil/playlist.m3u8" size="80"> <button onclick="userSubmit()">Play</button><br>
-<p>
-<script type="text/javascript" src="../../../playlists/streams.js"></script>
-<script type="text/javascript" src="../../../streams.js"></script>
-<script type="text/javascript">
-function userSubmit() {
-  window.location = getlink(document.getElementById('userInput').value);
-}
-</script>
-<div> The following videos should stream correctly. Each time an
-issue is reported with a sample playlist, it will be added in the list
-and verified after bugfixing </div>
-<ul id="streamlist"></ul>
-</body></html>
+<script type="text/javascript">function userSubmit() { window.location = getlink(document.getElementById('userInput').value);}</script>
