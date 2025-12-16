@@ -1,27 +1,43 @@
-<div style="width: 670px; height: 370px">
-<script src="jwplayer7.js"></script>
+<!DOCTYPE html><html><head>
+<title>test jwplayer 7</title>
+<meta name="referrer" content="origin">
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+body {margin: 0; padding: 0; background-color: beige;}
+#player {
+  position: relative;
+  overflow: hidden;
+  width: 99%;
+  max-width: 800px;
+  height: 400px;
+}
+</style>
+<script src="https://zoptv.github.io/bomtv/jwplayer7/jwplayer7.js"></script>
 <script type="text/javascript">jwplayer.key="XYS/ica6YQUMq9rC6J2E77obUFoIPLeM";</script>
-<div id="myJWplayer">Loading the player...</div>
+</head><body><center><br><h1 style="color:lime;"> Test JwPlayer 7</h1><br>
+<div id="player">Loading the player...</div>
 <script type="text/javascript">
-jwplayer("myJWplayer").setup({
-"playlist": [
-    {
-	 "image": "https://jumptv.github.io/img/Al-Arabiyia-tv.png",
-      "sources": [
-        {
-          "default": false,
-          "file": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
-          "label": "0",
-          "type": "hls",
-          "preload": "none"
-        }
-      ]
-    }
-  ],
-  width: "100%",
-  // skin: "seven",
-  skin: "six",
-  "primary": "html5",
-  "aspectratio": "16:9",
-  "hlshtml": true
-});</script></div>
+jwplayer("player").setup({
+"playlist": [{
+"image": "https://jumptv.github.io/img/Al-Arabiyia-tv.png",
+"sources": [{
+"default": false,
+"file": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
+"label": "0",
+"type": "hls",
+"preload": "none"
+}
+]
+}
+],
+width: "99%",
+// skin: "seven",
+skin: "six",
+"primary": "html5",
+"aspectratio": "16:9",
+"hlshtml": true
+});
+</script>
+</center>center></body></html>
